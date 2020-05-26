@@ -1,0 +1,23 @@
+<form [formGroup]="taxiTripForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="numberOfUnits">Number Of Units</label>
+        <input type="text" formControlName="numberOfUnits" class="form-control" id="numberOfUnits">
+    </div>
+    <div class="form-group">
+        <label for="timeAtStart">Time at Start</label>
+        <input type="datetime-local" formControlName="dateAndTime" class="form-control" id="dateAndTime">
+    </div>
+    <div class="form-group">
+        <label for="numberOfMilesBelowThreshold"> Number of Miles Below 6 MPH</label>
+        <input type="text" formControlName="numberOfMilesBelowThreshold" class="form-control" id="numberOfMilesBelowThreshold">
+    </div>
+    <div class="form-group">
+        <label for="numberOfMinutesAboveThreshold">Number of Minutes Above 6 MPH</label>
+        <input type="text" formControlName="numberOfMinutesAboveThreshold" class="form-control" id="numberOfMinutesAboveThreshold">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br>
+<div *ngIf="showPrice">
+    <app-price-display [priceModel]='priceResult'></app-price-display>
+</div>
