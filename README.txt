@@ -1,8 +1,5 @@
-Things wasn't able to complete:
--- protractor end to end test
--- some of the unit tests fail (not sure why but I suppose I'll need to do some digging)
+finished up the protractor end to end test, and then also fixed the unit tests.
 
-otherwise, pretty much everything else was complete!
 to run:
 
 import the NYCTripCalculator solution in visual studio. For now I've just run it in debug mode through iisexpress. It should serve on port 44314 by default. The main endpoint that the api serves is this one, to get the price:

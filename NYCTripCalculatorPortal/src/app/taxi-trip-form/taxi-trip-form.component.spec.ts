@@ -69,7 +69,7 @@ describe('TaxiTripFormComponent', () => {
     errors = date.errors || {};
     expect(errors['required']).toBeTruthy();
 
-    date.setValue('05/22/2020 10:37 PM');
+    date.setValue('2010-10-08T17:30');
     expect(date.valid).toBeTruthy();
 
     // since the input type is datetime-local, a user shouldnt be able to input a wrong datetime
@@ -144,16 +144,11 @@ describe('TaxiTripFormComponent', () => {
   });
 
   it('should submit a completed form', () => {
-    let numUnits = component.taxiTripForm.controls['numberOfUnits'];
-    let date = component.taxiTripForm.controls['dateAndTime'];
-    let miles = component.taxiTripForm.controls['numberOfMilesBelowThreshold'];
-    let minutes = component.taxiTripForm.controls['numberOfMinutesAboveThreshold'];
-    component.ngOnInit();
-    // set all values
-    numUnits.setValue(2);
-    date.setValue('05/22/2020 10:37 PM');
-    miles.setValue(2);
-    minutes.setValue(2);
+    component.taxiTripForm.controls['numberOfUnits'].setValue(2);
+    component.taxiTripForm.controls['dateAndTime'].setValue('2010-10-08T17:30');
+    component.taxiTripForm.controls['numberOfMilesBelowThreshold'].setValue(2);
+    component.taxiTripForm.controls['numberOfMinutesAboveThreshold'].setValue(5);    // set all values
+
 
     // submit and expect the showprice value to be true
     expect(component.taxiTripForm.valid).toBeTruthy();

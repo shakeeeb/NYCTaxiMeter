@@ -13,6 +13,11 @@ namespace NYCTaxiMeter.Helpers.Concrete
     /// </summary>
     public class NYCTaxiTripCalculator : ITripCalculator<NYCTaxiTripModel>
     {
+        /// <summary>
+        /// Calculates a price given an NYCTaxiTripModel.
+        /// </summary>
+        /// <param name="model">The NYCTaxiTripModel.</param>
+        /// <returns>the price as a decimal.</returns>
         public decimal CalculatePrice(NYCTaxiTripModel model)
         {
             // Unit fare (.35n) * (miles driven less than 6mph * 5)
@@ -35,8 +40,8 @@ namespace NYCTaxiMeter.Helpers.Concrete
             // Check if a given time is within peak hours.
             bool IsPeakTime(DateTime time) 
             {
-                var peakStart = time.Date.AddHours(16);
-                var peakEnd = time.Date.AddHours(20);
+                var peakStart = time.Date.AddHours(16); // 4 PM
+                var peakEnd = time.Date.AddHours(20);// 8 PM
 
                 return time > peakStart && time < peakEnd;
             }

@@ -1,5 +1,6 @@
 import { browser, by, element } from 'protractor';
 
+// these are helper methods for the page.
 export class AppPage {
   navigateTo(): Promise<unknown> {
     return browser.get(browser.baseUrl) as Promise<unknown>;
@@ -8,4 +9,5 @@ export class AppPage {
   getTitleText(): Promise<string> {
     return element(by.css('app-root .content span')).getText() as Promise<string>;
   }
+
 }

@@ -42,8 +42,6 @@ export class TaxiTripFormComponent implements OnInit {
         NumberOfUnits: this.taxiTripForm.get('numberOfUnits').value as number
       }
 
-      //alert(JSON.stringify(this.taxiTripModel, null, 4))
-
       // subscribe to the service 
       this._fareCalculator
         .getPrice(this.taxiTripModel)
@@ -54,11 +52,8 @@ export class TaxiTripFormComponent implements OnInit {
 
       // display the price.
       this.showPrice = true;
-
-      //alert(JSON.stringify(this.priceResult, null, 4))
     } else {
-      //console.log(JSON.stringify(this.taxiTripForm));
-      alert('this taxi trip form is invalid');
+      alert('This Taxi Trip Form is invalid.');
     }
   }
 
